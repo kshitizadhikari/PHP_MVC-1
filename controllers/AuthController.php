@@ -7,11 +7,13 @@
     {
         public function login()
         {
+            $this->setLayout('authLayout');
             return $this->render('login');
         }
 
         public function register(Request $request)
         {
+            $this->setLayout('authLayout');
             return $this->render('register');
         }
     }
