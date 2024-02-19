@@ -23,10 +23,6 @@
                 {
                     return 'success';
                 }
-                echo '<pre>';
-                var_dump($registerModel->errors);   
-                echo '<pre>';
-
                 return $this->render('register', ['model' => $registerModel]);
             }
             return $this->render('register', ['model' => $registerModel]);

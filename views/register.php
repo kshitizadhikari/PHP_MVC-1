@@ -1,35 +1,12 @@
-<?php
-
-?>
 
 <h1>Register View</h1>
-
-<form action="" method="POST">
+<?php $form = app\core\form\Form::begin('', "post") ?>
     <div class="row">
-        <div class="col">
-            <div class="mb-3">
-                <label class="form-label">FirstName</label>
-                <input type="text" class="form-control" name="firstName">
-            </div>
-        </div>
-        <div class="col">
-            <div class="mb-3">
-                <label class="form-label">LastName</label>
-                <input type="text" class="form-control" name="lastName">
-            </div>
-        </div>
+        <div class="col"><?php echo $form->field($model, 'firstName'); ?></div>
+        <div class="col"><?php echo $form->field($model, 'lastName'); ?></div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Email address</label>
-        <input type="email" class="form-control" name="email">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" name="confirmPassword">
-    </div>
+    <?php echo $form->field($model, 'email'); ?>
+    <?php echo $form->field($model, 'password')->passwordField(); ?>
+    <?php echo $form->field($model, 'confirmPassword')->passwordField(); ?>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php app\core\form\Form::end(); ?>
