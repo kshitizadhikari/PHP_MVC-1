@@ -61,7 +61,7 @@ abstract class Model
     }
 
     public function errorMessages()
-    {
+    {                                                                                                                                                                                                                                                                                       
         return [
             self::RULE_REQUIRED => 'This field is required',
             self::RULE_EMAIL => 'This field must be a valid email address',
