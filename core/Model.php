@@ -33,7 +33,6 @@ abstract class Model
                 if (is_array($ruleName)) {
                     $ruleName = $rule[0];
                 }
-
                 if ($ruleName === self::RULE_REQUIRED && !$value) {
                     $this->addError($attribute, self::RULE_REQUIRED);
                 } elseif ($ruleName === self::RULE_EMAIL && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
