@@ -1,7 +1,8 @@
 <?php
     namespace app\core;
 
-    use Exception;
+use app\core\db\Database;
+use Exception;
 
     class Application
     {
@@ -15,7 +16,7 @@
         public static Application $app;
         public ?Controller $controller = null;
         public Database $db;
-        public ?DbModel $user;
+        public ?UserModel $user;
         public View $view;
 
         public function __construct($rootPath, array $config) {
@@ -62,7 +63,7 @@
             $this->controller = $controller;
         }
 
-        public function login(DbModel $user)
+        public function login(UserModel $user)
         {
             $this->user = $user;
             $primaryKey = $user->primaryKey();

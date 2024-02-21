@@ -17,6 +17,19 @@ class InputField extends BaseField
         parent::__construct($model, $attribute);
     }
 
+    public function __toString()
+        {
+            return sprintf(
+                '<div class="mb-3">
+                    <label>%s</label>
+                    %s  
+                    <div class="invalid-feedback">%s</div>
+                </div>',
+                $this->model->getLabel($this->attribute),
+                $this->renderInput(),
+                $this->model->getFirstError($this->attribute)
+            );
+        }
     public function passwordField()
     {
         $this->fieldType = self::FIELD_TYPE_PASSWORD;
@@ -26,10 +39,10 @@ class InputField extends BaseField
     public function renderInput(): string
     {
         return sprintf('<input type="%s" name="%s" value="%s" class="form-control%s">',
+        $this->fieldType,
         $this->attribute,
         $this->model->{$this->attribute},
         $this->model->hasError($this->attribute) ? ' is-invalid' : '',
-        $this->model->getFirstError($this->attribute)
         
     );
     }

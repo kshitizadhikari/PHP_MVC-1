@@ -3,8 +3,8 @@
 
     use app\core\Application;
     use app\core\Controller;
-use app\core\middlewares\AuthMiddleware;
-use app\core\Request;
+    use app\core\middlewares\AuthMiddleware;
+    use app\core\Request;
     use app\core\Response;
     use app\models\User;
     use app\models\LoginForm;
@@ -18,7 +18,7 @@ use app\core\Request;
 
         public function login(Request $request, Response $response)
         {
-            $this->setLayout('authLayout');
+            $this->setLayout('mainLayout');
             $loginForm = new LoginForm();
             if($request->isPost()) {
                 $loginForm->loadData($request->getBody());

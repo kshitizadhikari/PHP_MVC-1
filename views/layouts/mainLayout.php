@@ -30,12 +30,12 @@ use app\core\Application;
       </ul>
       <?php else: ?>
         <ul class="navbar-nav ms-auto d-flex flex-row">
+        <li class="nav-item px-3"> 
+              <a class="nav-link" href="/profile">Profile</a>
+          </li>
           <li class="nav-item px-3"> 
             <?php echo Application::$app->user->getDisplayName() ?>
               <a class="nav-link" href="/logout">Logout</a>
-          </li>
-          <li class="nav-item px-3"> 
-              <a class="nav-link" href="/profile">Profile</a>
           </li>
       </ul>
       <?php endif; ?>
