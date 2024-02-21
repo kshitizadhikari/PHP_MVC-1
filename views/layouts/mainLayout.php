@@ -8,20 +8,25 @@ use app\core\Application;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MVC-1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <ul class="nav">
-        <li class="nav-item">
+    <div class="d-flex flex-row mb-3 p-4">
+      <ul class="navbar-nav mr-auto d-flex flex-row">
+        <li class="nav-item px-3">
             <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
+          </li>
+          <li class="nav-item px-3">
             <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
-        </li>
-    </ul>
+          </li>
+      </ul>
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+          <li class="nav-item px-3"> 
+              <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item px-3">
+              <a class="nav-link" href="/register">Register</a>
+          </li>
+      </ul>
+    </div>
+    
   </head>
   <body>
     <div class="container">

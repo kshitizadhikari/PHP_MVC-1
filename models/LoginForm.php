@@ -30,8 +30,7 @@
                 $this->addError('password', "Password is incorrect");
                 return false;
             }
-            return $response->redirect('/');
-            // return Application::$app->login($user);
+            return Application::$app->login($user);
         }
 
         public function labels(): array

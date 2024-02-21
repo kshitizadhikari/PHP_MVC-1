@@ -7,6 +7,7 @@ use app\core\Model;
     {
         abstract public static function tableName(): string;
         abstract public function attributes(): array;
+        abstract public static function primaryKey(): string;
 
         public function save()
         {

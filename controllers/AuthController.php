@@ -12,7 +12,7 @@
     {
         public function login(Request $request, Response $response)
         {
-            $this->setLayout('mainLayout');
+            $this->setLayout('authLayout');
             $loginForm = new LoginForm();
             if($request->isPost()) {
                 $loginForm->loadData($request->getBody());

@@ -24,6 +24,10 @@
             return ['firstName', 'lastName', 'email', 'password', 'status'];
         }
 
+        public static function primaryKey(): string {
+            return 'id';
+        }
+
         public function labels(): array {
             return [
                 'firstName' => 'First Name',
