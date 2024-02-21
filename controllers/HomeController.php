@@ -4,6 +4,8 @@
 use app\core\Application;
 use app\core\Controller;
 use app\core\Request;
+use app\core\Response;
+use app\models\ContactForm;
 
     class HomeController extends Controller
     {
@@ -15,8 +17,18 @@ use app\core\Request;
             return $this->render('home', $params);
         }
 
-        public function contact() {
-            return $this->render('contact');
+        public function contact(Request $request, Response $response) {
+            $contactForm = new ContactForm();
+            if($request->isPost())
+            {
+                $contactForm->loadData($request->getBody());
+                if($contactForm->validate() && $contactForm->send())
+                {
+                    Application::$app->session->setFlash('success', 'Your message has been sent successfully');
+                    return $response->redirect('/');
+                }
+            }
+            return $this->render('contact', ['model' => $contactForm]);
         }
 
         public function handleContact(Request $request) {

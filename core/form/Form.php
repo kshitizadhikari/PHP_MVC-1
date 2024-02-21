@@ -18,7 +18,7 @@
 
         public function field(Model $model, $attribute)
         {
-            return new Field($model, $attribute); // Return an instance of Field
+            return new InputField($model, $attribute); // Return an instance of Field
         }
     }
 ?>

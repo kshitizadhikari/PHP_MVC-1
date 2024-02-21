@@ -22,7 +22,7 @@ use app\models\User;
 
     $app->router->get('/', [HomeController::class, 'home']);
     $app->router->get('/contact', [HomeController::class, 'contact']);
-    $app->router->post('/contact',[HomeController::class, 'handleContact']);
+    $app->router->post('/contact',[HomeController::class, 'contact']);
 
     $app->router->get('/login',[AuthController::class, 'login']);
     $app->router->post('/login',[AuthController::class, 'login']);
