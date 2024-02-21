@@ -17,6 +17,7 @@ use app\core\Application;
             <a class="nav-link" href="/contact">Contact</a>
           </li>
       </ul>
+      <?php if(Application::isGuest()): ?>
       <ul class="navbar-nav ms-auto d-flex flex-row">
           <li class="nav-item px-3"> 
               <a class="nav-link" href="/login">Login</a>
@@ -25,6 +26,14 @@ use app\core\Application;
               <a class="nav-link" href="/register">Register</a>
           </li>
       </ul>
+      <?php else: ?>
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+          <li class="nav-item px-3"> 
+            <?php echo Application::$app->user->getDisplayName() ?>
+              <a class="nav-link" href="/logout">Logout</a>
+          </li>
+      </ul>
+      <?php endif; ?>
     </div>
     
   </head>

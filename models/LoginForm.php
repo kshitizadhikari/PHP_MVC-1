@@ -17,7 +17,7 @@
             ];
         }
 
-        public function login(Request $request, Response $response)
+        public function login()
         {
             $user = User::findOne(['email'=>$this->email]);
             if(!$user)

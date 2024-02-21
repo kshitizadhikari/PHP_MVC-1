@@ -9,7 +9,7 @@ use app\core\Request;
     {
         public function home() {
             $params = [
-                'name' => "Kshitiz"
+                'name' => Application::$app->user->getDisplayName(),
             ];
             return $this->render('home', $params);
         }

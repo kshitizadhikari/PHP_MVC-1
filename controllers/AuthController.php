@@ -16,7 +16,7 @@
             $loginForm = new LoginForm();
             if($request->isPost()) {
                 $loginForm->loadData($request->getBody());
-                if($loginForm->validate() && $loginForm->login($request, $response)) {
+                if($loginForm->validate() && $loginForm->login()) {
                     $response->redirect('/');
                     return;
                 }
@@ -39,5 +39,11 @@
                 return $this->render('register', ['model' => $user]);
             }
             return $this->render('register', ['model' => $user]);
+        }
+
+        public function logout(Request $request, Response $response)
+        {
+            Application::$app->logout();
+            return $response->redirect('/');
         }
     }

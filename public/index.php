@@ -29,6 +29,8 @@ use app\models\User;
     $app->router->get('/register',[AuthController::class, 'register']);
     $app->router->post('/register',[AuthController::class, 'register']);
 
+    $app->router->get('/logout',[AuthController::class, 'logout']);
+
 
     $app->run();
 
