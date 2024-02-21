@@ -6,9 +6,11 @@ use app\core\Application;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MVC-1</title>
+    <title><?php echo $this->title ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <div class="d-flex flex-row mb-3 p-4">
+  </head>
+  <body>
+  <div class="d-flex flex-row mb-3 p-4">
       <ul class="navbar-nav mr-auto d-flex flex-row">
         <li class="nav-item px-3">
             <a class="nav-link" href="/">Home</a>
@@ -39,9 +41,8 @@ use app\core\Application;
       <?php endif; ?>
     </div>
     
-  </head>
-  <body>
     <div class="container">
+      
         <?php if(Application::$app->session->getFlash('success')): ?>
           <div class="alert alert-success">
             <?php echo Application::$app->session->getFlash('success') ?>
