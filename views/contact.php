@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @var $this \app\core\View
+ */
+$this->title = 'Contact Page';
 ?>
 
 <h1>Contact View</h1>
