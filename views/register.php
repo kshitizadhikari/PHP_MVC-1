@@ -1,5 +1,7 @@
-
-<h1>Register View</h1>
+<?php
+    /* *@var model \app\models\User  */
+?>
+<h1>Register Page</h1>
 <?php $form = app\core\form\Form::begin('', "post") ?>
     <div class="row">
         <div class="col"><?php echo $form->field($model, 'firstName'); ?></div>

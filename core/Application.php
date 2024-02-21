@@ -10,6 +10,8 @@
         public static Application $app;
         public Controller $controller;
         public Database $db;
+        public ?DbModel $user;
+
         public function __construct($rootPath, array $config) {
             self::$ROOT_DIR = $rootPath;
             self::$app = $this;
@@ -33,5 +35,10 @@
         public function setController(Controller $controller)
         {
             $this->controller = $controller;
+        }
+
+        public function login(DbModel $user)
+        {
+
         }
     }

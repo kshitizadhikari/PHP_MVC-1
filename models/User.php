@@ -16,7 +16,7 @@
         public string $confirmPassword = '';
         public int $status;
 
-        public function tableName(): string {
+        public static function tableName(): string {
             return 'users';
         }
 
