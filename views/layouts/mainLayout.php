@@ -32,6 +32,9 @@ use app\core\Application;
             <?php echo Application::$app->user->getDisplayName() ?>
               <a class="nav-link" href="/logout">Logout</a>
           </li>
+          <li class="nav-item px-3"> 
+              <a class="nav-link" href="/profile">Profile</a>
+          </li>
       </ul>
       <?php endif; ?>
     </div>

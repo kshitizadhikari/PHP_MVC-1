@@ -7,9 +7,10 @@ use app\core\Request;
 
     class HomeController extends Controller
     {
+        
         public function home() {
             $params = [
-                'name' => Application::$app->user->getDisplayName(),
+                'name' => 'kshitiz',
             ];
             return $this->render('home', $params);
         }
